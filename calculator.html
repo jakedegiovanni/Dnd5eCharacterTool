@@ -1,6 +1,7 @@
 <!Doctype html>
 <html>
     <head>
+         <meta charset="UTF-8">
         <title>Ability Calculator</title>
 
         <style>
@@ -8,13 +9,57 @@
                 width: 50%;
                 padding-top: 3%;
                 padding-bottom: 3%;
+                text-align: center;
+            }
+
+            select {
+                margin-left: 3%;
+                margin-top: 3%;
+                margin-bottom: 1.5%;
             }
         </style>
+
+        <script src="d3/d3.min.js" charset="utf-8"></script>
     </head>
     <body>
+        <div align="center">
+            <select id="race" onchange="populateTable()">
+                <option value="none">Please Select a Race</option>
+                <option value="hilldwarf">Hill Dwarf</option>
+                <option value="mountaindwarf">Mountain Dwarf</option>
+                <option value="highelf">High-Elf</option>
+                <option value="woodelf">Wood-Elf</option>
+                <option value="darkelf">Dark-Elf/Drow</option>
+                <option value="lightfoot">Lightfoot-Halfling</option>
+                <option value="stout">Stout-Halfling</option>
+                <option value="human">Human</option>
+                <option value="dragonborn">Dragonborn</option>
+                <option value="forestgnome">Forest-Gnome</option>
+                <option value="rockgnome">Rock-Gnome</option>
+                <option value="halforc">Half-Orc</option>
+                <option value="tiefling">Tiefling</option>
+            </select>
+
+            <select>
+                <option value="none">Please Select a Class</option>
+                <option value="barbarian">Barbarian</option>
+                <option value="bard">Bard</option>
+                <option value="cleric">Cleric</option>
+                <option value="druid">Druid</option>
+                <option value="fighter">Fighter</option>
+                <option value="monk">Monk</option>
+                <option value="paladin">Paladin</option>
+                <option value="ranger">Ranger</option>
+                <option value="rogue">TRogue</option>
+                <option value="sorcerer">Sorcerer</option>
+                <option value="warlock">Warlock</option>
+                <option value="wizard">Wizard</option>
+            </select>
+        </div>
+
         <table align="center">
             <tr>
-                <td>Strength</td>
+                <th>Strength</th>
                 <td>
                     <button type="button" onclick="minus('strength')">-</button>
                     <input id="strength" name="screen" value="0">
@@ -23,7 +68,7 @@
             </tr>
 
             <tr>
-                <td>Dexterity</td>
+                <th>Dexterity</th>
                 <td>
                     <button type="button" onclick="minus('dexterity')">-</button>
                     <input id="dexterity" name="screen" value="0">
@@ -32,7 +77,7 @@
             </tr>
 
             <tr>
-                <td>Constitution</td>
+                <th>Constitution</th>
                 <td>
                     <button type="button" onclick="minus('constitution')">-</button>
                     <input id="constitution" name="screen" value="0">
@@ -41,7 +86,7 @@
             </tr>
 
             <tr>
-                <td>Intelligence</td>
+                <th>Intelligence</th>
                 <td>
                     <button type="button" onclick="minus('intelligence')">-</button>
                     <input id="intelligence" name="screen" value="0">
@@ -50,7 +95,7 @@
             </tr>
 
             <tr>
-                <td>Wisdom</td>
+                <th>Wisdom</th>
                 <td>
                     <button type="button" onclick="minus('wisdom')">-</button>
                     <input id="wisdom" name="screen" value="0">
@@ -59,24 +104,65 @@
             </tr>
 
             <tr>
-                <td>Charisma</td>
+                <th>Charisma</th>
                 <td>
                     <button type="button" onclick="minus('charisma')">-</button>
                     <input id="charisma" name="screen" value="0">
                     <button type="button" onclick="add('charisma')">+</button>
                 </td>
             </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="reset()">Reset</button></td>
+            </tr>
         </table>
 
         <script language="javascript">
             function add(target) {
-                prev = document.getElementById(target).value
+                var prev = document.getElementById(target).value;
                 document.getElementById(target).value = parseInt(prev) + 1;
             }
 
             function minus(target) {
-                prev = document.getElementById(target).value
-                document.getElementById(target).value = parseInt(prev) - 1;
+                var prev = document.getElementById(target).value;
+                if (parseInt(prev) > 0)
+                    document.getElementById(target).value = parseInt(prev) - 1;
+            }
+
+            function reset() {
+                document.getElementById('strength').value = 0;
+                document.getElementById('dexterity').value = 0;
+                document.getElementById('constitution').value = 0;
+                document.getElementById('intelligence').value = 0;
+                document.getElementById('wisdom').value = 0;
+                document.getElementById('charisma').value = 0;
+            }
+
+            function populateTable() {
+                var name = document.getElementById("race").value;
+                var file = name + ".csv";
+                var dataset = [];
+                /*d3.csv(file, function(data) {        // not working!!!!!!
+                    alert("1");
+                    dataset = data;);
+                });*/
+                d3.csv(file, function(data) {
+                  console.log(data[0]);
+                  alert(JSON.stringify(data[0]));
+                  document.getElementById('strength').value = data[0];
+                  document.getElementById('dexterity').value = data[1];
+                  document.getElementById('constitution').value = data[2];
+                  document.getElementById('intelligence').value = data[3];
+                  document.getElementById('wisdom').value = data[4];
+                  document.getElementById('charisma').value = data[5];
+                });
+
+            /*    document.getElementById('strength').value = data[0];
+                document.getElementById('dexterity').value = data[1];
+                document.getElementById('constitution').value = data[2];
+                document.getElementById('intelligence').value = data[3];
+                document.getElementById('wisdom').value = data[4];
+                document.getElementById('charisma').value = data[5];  */
+
             }
         </script>
     </body>
