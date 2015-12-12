@@ -1,9 +1,83 @@
 <!Doctype html>
 <html>
     <head>
+        <title>Ability Calculator</title>
 
+        <style>
+            td {
+                width: 50%;
+                padding-top: 3%;
+                padding-bottom: 3%;
+            }
+        </style>
     </head>
     <body>
+        <table align="center">
+            <tr>
+                <td>Strength</td>
+                <td>
+                    <button type="button" onclick="minus('strength')">-</button>
+                    <input id="strength" name="screen" value="0">
+                    <button type="button" onclick="add('strength')">+</button>
+                </td>
+            </tr>
 
+            <tr>
+                <td>Dexterity</td>
+                <td>
+                    <button type="button" onclick="minus('dexterity')">-</button>
+                    <input id="dexterity" name="screen" value="0">
+                    <button type="button" onclick="add('dexterity')">+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Constitution</td>
+                <td>
+                    <button type="button" onclick="minus('constitution')">-</button>
+                    <input id="constitution" name="screen" value="0">
+                    <button type="button" onclick="add('constitution')">+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Intelligence</td>
+                <td>
+                    <button type="button" onclick="minus('intelligence')">-</button>
+                    <input id="intelligence" name="screen" value="0">
+                    <button type="button" onclick="add('intelligence')">+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Wisdom</td>
+                <td>
+                    <button type="button" onclick="minus('wisdom')">-</button>
+                    <input id="wisdom" name="screen" value="0">
+                    <button type="button" onclick="add('wisdom')">+</button>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Charisma</td>
+                <td>
+                    <button type="button" onclick="minus('charisma')">-</button>
+                    <input id="charisma" name="screen" value="0">
+                    <button type="button" onclick="add('charisma')">+</button>
+                </td>
+            </tr>
+        </table>
+
+        <script language="javascript">
+            function add(target) {
+                prev = document.getElementById(target).value
+                document.getElementById(target).value = parseInt(prev) + 1;
+            }
+
+            function minus(target) {
+                prev = document.getElementById(target).value
+                document.getElementById(target).value = parseInt(prev) - 1;
+            }
+        </script>
     </body>
 </html>
