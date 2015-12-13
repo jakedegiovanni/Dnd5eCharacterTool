@@ -7,6 +7,7 @@
         <style>
             td {
                 width: 50%;
+                max-width: 50%;
                 padding-top: 3%;
                 padding-bottom: 3%;
                 text-align: center;
@@ -17,51 +18,49 @@
                 margin-top: 3%;
                 margin-bottom: 1.5%;
             }
+
+            body {
+                background-color: #f5f5dc;
+            }
+
+            .noButton {
+                width: 100%;
+            }
+
+            .classInfo {
+                width: 25%;
+                height: 25%;
+            }
         </style>
 
         <script src="d3/d3.min.js" charset="utf-8"></script>
     </head>
     <body>
-        <div align="center">
-            <select id="race" onchange="populateTableRace()">
-                <option value="norace">Please Select a Race</option>
-                <option value="hilldwarf">Hill Dwarf</option>
-                <option value="mountaindwarf">Mountain Dwarf</option>
-                <option value="highelf">High-Elf</option>
-                <option value="woodelf">Wood-Elf</option>
-                <option value="darkelf">Dark-Elf/Drow</option>
-                <option value="lightfoot">Lightfoot-Halfling</option>
-                <option value="stout">Stout-Halfling</option>
-                <option value="human">Human</option>
-                <option value="dragonborn">Dragonborn</option>
-                <option value="forestgnome">Forest-Gnome</option>
-                <option value="rockgnome">Rock-Gnome</option>
-                <option value="halfelf">Half-Elf</option>
-                <option value="halforc">Half-Orc</option>
-                <option value="tiefling">Tiefling</option>
-            </select>
-
-            <select>
-                <option value="none">Please Select a Class</option>
-                <option value="barbarian">Barbarian</option>
-                <option value="bard">Bard</option>
-                <option value="cleric">Cleric</option>
-                <option value="druid">Druid</option>
-                <option value="fighter">Fighter</option>
-                <option value="monk">Monk</option>
-                <option value="paladin">Paladin</option>
-                <option value="ranger">Ranger</option>
-                <option value="rogue">TRogue</option>
-                <option value="sorcerer">Sorcerer</option>
-                <option value="warlock">Warlock</option>
-                <option value="wizard">Wizard</option>
-            </select>
-        </div>
-
-        <div align=center><button type="button" onclick="resetRace(); resetClass()">Reset All</button></div>
-
+        <h1 align="center" style="padding-bottom: 3%; font-family: Verdana;">Dungeons and Dragons Player Planner</h1>
         <div>
-            <table style="float: left">
+            <table style="float: left; width: 30%">
+                <tr>
+                    <td colspan="2">
+                        <select id="race" onchange="populateTableRace()">
+                            <option value="norace">Please Select a Race</option>
+                            <option value="hilldwarf">Hill Dwarf</option>
+                            <option value="mountaindwarf">Mountain Dwarf</option>
+                            <option value="highelf">High-Elf</option>
+                            <option value="woodelf">Wood-Elf</option>
+                            <option value="darkelf">Dark-Elf/Drow</option>
+                            <option value="lightfoot">Lightfoot-Halfling</option>
+                            <option value="stout">Stout-Halfling</option>
+                            <option value="human">Human</option>
+                            <option value="dragonborn">Dragonborn</option>
+                            <option value="forestgnome">Forest-Gnome</option>
+                            <option value="rockgnome">Rock-Gnome</option>
+                            <option value="halfelf">Half-Elf</option>
+                            <option value="halforc">Half-Orc</option>
+                            <option value="tiefling">Tiefling</option>
+                        </select>
+                    </td>
+                </tr>
+
                 <tr>
                     <th>Strength</th>
                     <td>
@@ -113,7 +112,7 @@
                 <tr>
                     <th>Remaining</th>
                     <td>
-                        <input id="remaining" name="screen" value="0" style="width: 100%">
+                        <input id="remaining" name="screen" value="0" class="noButton">
                     </td>
                 </tr>
 
@@ -122,51 +121,10 @@
                 </tr>
             </table>
 
-            <table style="float: right; padding-right: 7%">
-                <tr>
-                    <th>Hit Points</th>
-                    <td>
-                        <input id="hitpoints" name="screen" value="0">
-                        <button type="button" onclick="add('hitpoints')">+</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Hit Die</th>
-                    <td>
-                        <input id="hitdie" name="screen" value="0">
-                        <button type="button" onclick="add('hitdie')">+</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Proficiencies</th>
-                    <td>
-                        <input id="proficiencies" name="screen" value="0">
-                        <button type="button" onclick="add('proficiencies')">+</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Class Abilities</th>
-                    <td>
-                        <input id="classabilities" name="screen" value="0">
-                        <button type="button" onclick="add('classabilities')">+</button>
-                    </td>
-                </tr>
-
-                <tr>
-                    <th>Remaining</th>
-                    <td>
-                        <input id="remaining" name="screen" value="0" style="width: 100%">
-                    </td>
-                </tr>
-
-                <tr>
-                    <td colspan="2"><button type="button" onclick="resetClass()">Reset</button></td>
-                </tr>
-            </table>
+            <img src="classes/classes.png" alt="class descriptions image" height="800" width="1500" style="float: right">
         </div>
+
+        <script src="classes/barbarian.js"></script>
 
         <script language="javascript">
             function add(target) {
@@ -226,6 +184,12 @@
                 document.getElementById('hitdie').value = 0;
                 document.getElementById('proficiencies').value = 0;
                 document.getElementById('classabilities').value = 0;
+            }
+
+            function populateTableClass() {
+                alert("before");
+                barbarian();
+                alert("after");
             }
         </script>
     </body>
