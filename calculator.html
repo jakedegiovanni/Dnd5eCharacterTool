@@ -23,8 +23,8 @@
     </head>
     <body>
         <div align="center">
-            <select id="race" onchange="populateTable()">
-                <option value="none">Please Select a Race</option>
+            <select id="race" onchange="populateTableRace()">
+                <option value="norace">Please Select a Race</option>
                 <option value="hilldwarf">Hill Dwarf</option>
                 <option value="mountaindwarf">Mountain Dwarf</option>
                 <option value="highelf">High-Elf</option>
@@ -36,6 +36,7 @@
                 <option value="dragonborn">Dragonborn</option>
                 <option value="forestgnome">Forest-Gnome</option>
                 <option value="rockgnome">Rock-Gnome</option>
+                <option value="halfelf">Half-Elf</option>
                 <option value="halforc">Half-Orc</option>
                 <option value="tiefling">Tiefling</option>
             </select>
@@ -57,69 +58,125 @@
             </select>
         </div>
 
-        <table align="center">
-            <tr>
-                <th>Strength</th>
-                <td>
-                    <button type="button" onclick="minus('strength')">-</button>
-                    <input id="strength" name="screen" value="0">
-                    <button type="button" onclick="add('strength')">+</button>
-                </td>
-            </tr>
+        <div align=center><button type="button" onclick="resetRace(); resetClass()">Reset All</button></div>
 
-            <tr>
-                <th>Dexterity</th>
-                <td>
-                    <button type="button" onclick="minus('dexterity')">-</button>
-                    <input id="dexterity" name="screen" value="0">
-                    <button type="button" onclick="add('dexterity')">+</button>
-                </td>
-            </tr>
+        <div>
+            <table style="float: left">
+                <tr>
+                    <th>Strength</th>
+                    <td>
+                        <input id="strength" name="screen" value="0">
+                        <button type="button" onclick="add('strength')">+</button>
+                    </td>
+                </tr>
 
-            <tr>
-                <th>Constitution</th>
-                <td>
-                    <button type="button" onclick="minus('constitution')">-</button>
-                    <input id="constitution" name="screen" value="0">
-                    <button type="button" onclick="add('constitution')">+</button>
-                </td>
-            </tr>
+                <tr>
+                    <th>Dexterity</th>
+                    <td>
+                        <input id="dexterity" name="screen" value="0">
+                        <button type="button" onclick="add('dexterity')">+</button>
+                    </td>
+                </tr>
 
-            <tr>
-                <th>Intelligence</th>
-                <td>
-                    <button type="button" onclick="minus('intelligence')">-</button>
-                    <input id="intelligence" name="screen" value="0">
-                    <button type="button" onclick="add('intelligence')">+</button>
-                </td>
-            </tr>
+                <tr>
+                    <th>Constitution</th>
+                    <td>
+                        <input id="constitution" name="screen" value="0">
+                        <button type="button" onclick="add('constitution')">+</button>
+                    </td>
+                </tr>
 
-            <tr>
-                <th>Wisdom</th>
-                <td>
-                    <button type="button" onclick="minus('wisdom')">-</button>
-                    <input id="wisdom" name="screen" value="0">
-                    <button type="button" onclick="add('wisdom')">+</button>
-                </td>
-            </tr>
+                <tr>
+                    <th>Intelligence</th>
+                    <td>
+                        <input id="intelligence" name="screen" value="0">
+                        <button type="button" onclick="add('intelligence')">+</button>
+                    </td>
+                </tr>
 
-            <tr>
-                <th>Charisma</th>
-                <td>
-                    <button type="button" onclick="minus('charisma')">-</button>
-                    <input id="charisma" name="screen" value="0">
-                    <button type="button" onclick="add('charisma')">+</button>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="button" onclick="reset()">Reset</button></td>
-            </tr>
-        </table>
+                <tr>
+                    <th>Wisdom</th>
+                    <td>
+                        <input id="wisdom" name="screen" value="0">
+                        <button type="button" onclick="add('wisdom')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Charisma</th>
+                    <td>
+                        <input id="charisma" name="screen" value="0">
+                        <button type="button" onclick="add('charisma')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Remaining</th>
+                    <td>
+                        <input id="remaining" name="screen" value="0" style="width: 100%">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><button type="button" onclick="resetRace()">Reset</button></td>
+                </tr>
+            </table>
+
+            <table style="float: right; padding-right: 7%">
+                <tr>
+                    <th>Hit Points</th>
+                    <td>
+                        <input id="hitpoints" name="screen" value="0">
+                        <button type="button" onclick="add('hitpoints')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Hit Die</th>
+                    <td>
+                        <input id="hitdie" name="screen" value="0">
+                        <button type="button" onclick="add('hitdie')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Proficiencies</th>
+                    <td>
+                        <input id="proficiencies" name="screen" value="0">
+                        <button type="button" onclick="add('proficiencies')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Class Abilities</th>
+                    <td>
+                        <input id="classabilities" name="screen" value="0">
+                        <button type="button" onclick="add('classabilities')">+</button>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>Remaining</th>
+                    <td>
+                        <input id="remaining" name="screen" value="0" style="width: 100%">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><button type="button" onclick="resetClass()">Reset</button></td>
+                </tr>
+            </table>
+        </div>
 
         <script language="javascript">
             function add(target) {
                 var prev = document.getElementById(target).value;
-                document.getElementById(target).value = parseInt(prev) + 1;
+                prev = parseInt(prev);
+
+                if (parseInt(document.getElementById('remaining').value) > 0) {
+                    document.getElementById(target).value = prev + 1;
+                    document.getElementById('remaining').value = parseInt(document.getElementById('remaining').value) - 1;
+                }
             }
 
             function minus(target) {
@@ -128,41 +185,47 @@
                     document.getElementById(target).value = parseInt(prev) - 1;
             }
 
-            function reset() {
-                document.getElementById('strength').value = 0;
+            function resetRace() {
+                populateTableRace();
+                /*document.getElementById('strength').value = 0;
                 document.getElementById('dexterity').value = 0;
                 document.getElementById('constitution').value = 0;
                 document.getElementById('intelligence').value = 0;
                 document.getElementById('wisdom').value = 0;
-                document.getElementById('charisma').value = 0;
+                document.getElementById('charisma').value = 0;*/
             }
 
-            function populateTable() {
+            function populateTableRace() {
                 var name = document.getElementById("race").value;
-                var file = name + ".csv";
-                var dataset = [];
-                /*d3.csv(file, function(data) {        // not working!!!!!!
-                    alert("1");
-                    dataset = data;);
-                });*/
+                var file = "races/" + name + ".csv";
+                var dataset = " ";
+                var array = [];
+
                 d3.csv(file, function(data) {
-                  console.log(data[0]);
-                  alert(JSON.stringify(data[0]));
-                  document.getElementById('strength').value = data[0];
-                  document.getElementById('dexterity').value = data[1];
-                  document.getElementById('constitution').value = data[2];
-                  document.getElementById('intelligence').value = data[3];
-                  document.getElementById('wisdom').value = data[4];
-                  document.getElementById('charisma').value = data[5];
+                //  console.log(data[0]);
+                  dataset = JSON.stringify(data[0]);
+                  array = dataset.split(",");
+
+                  var i;
+                  for (i = 0; i<array.length; i++) {
+                      array[i] = array[i].split(":");
+                  }
+
+                  document.getElementById('strength').value = parseInt(array[0][1][1]);
+                  document.getElementById('dexterity').value = parseInt(array[1][1][1]);
+                  document.getElementById('constitution').value = parseInt(array[2][1][1]);
+                  document.getElementById('intelligence').value = parseInt(array[3][1][1]);
+                  document.getElementById('wisdom').value = parseInt(array[4][1][1]);
+                  document.getElementById('charisma').value = parseInt(array[5][1][1]);
+                  document.getElementById('remaining').value = parseInt(array[6][1][1]);
                 });
+            }
 
-            /*    document.getElementById('strength').value = data[0];
-                document.getElementById('dexterity').value = data[1];
-                document.getElementById('constitution').value = data[2];
-                document.getElementById('intelligence').value = data[3];
-                document.getElementById('wisdom').value = data[4];
-                document.getElementById('charisma').value = data[5];  */
-
+            function resetClass() {
+                document.getElementById('hitpoints').value = 0;
+                document.getElementById('hitdie').value = 0;
+                document.getElementById('proficiencies').value = 0;
+                document.getElementById('classabilities').value = 0;
             }
         </script>
     </body>
