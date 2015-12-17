@@ -53,264 +53,282 @@
         <h2 align="center" style="font-family: Verdana;">Build Your Character!</h2>
         <div style="margin-left: 48%; padding-bottom: 1.5%"><button type="button" onclick="resetAll()">Reset All</button></div>
 
-        <div style="width: 50%; margin-left: 23%">
-            <table style="float: left">
-                <tr>
-                    <td colspan="2">
-                        <select id="raceselect" onchange="populateTableRace()">
-                            <option value="norace">Please Select a Race</option>
-                            <option value="hilldwarf">Hill Dwarf</option>
-                            <option value="mountaindwarf">Mountain Dwarf</option>
-                            <option value="highelf">High-Elf</option>
-                            <option value="woodelf">Wood-Elf</option>
-                            <option value="darkelf">Dark-Elf/Drow</option>
-                            <option value="lightfoot">Lightfoot-Halfling</option>
-                            <option value="stout">Stout-Halfling</option>
-                            <option value="human">Human</option>
-                            <option value="dragonborn">Dragonborn</option>
-                            <option value="forestgnome">Forest-Gnome</option>
-                            <option value="rockgnome">Rock-Gnome</option>
-                            <option value="halfelf">Half-Elf</option>
-                            <option value="halforc">Half-Orc</option>
-                            <option value="tiefling">Tiefling</option>
-                        </select>
-                    </td>
-                </tr>
+        <h2 align="center">Step 1: Choose a Race</h2>
+        <table align="center" >
+            <tr>
+                <td colspan="2">
+                    <select id="raceselect" onchange="populateTableRace()">
+                        <option value="norace">Please Select a Race</option>
+                        <option value="hilldwarf">Hill Dwarf</option>
+                        <option value="mountaindwarf">Mountain Dwarf</option>
+                        <option value="highelf">High-Elf</option>
+                        <option value="woodelf">Wood-Elf</option>
+                        <option value="darkelf">Dark-Elf/Drow</option>
+                        <option value="lightfoot">Lightfoot-Halfling</option>
+                        <option value="stout">Stout-Halfling</option>
+                        <option value="human">Human</option>
+                        <option value="dragonborn">Dragonborn</option>
+                        <option value="forestgnome">Forest-Gnome</option>
+                        <option value="rockgnome">Rock-Gnome</option>
+                        <option value="halfelf">Half-Elf</option>
+                        <option value="halforc">Half-Orc</option>
+                        <option value="tiefling">Tiefling</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th colspan="2">
-                        Your Ability Modifiers
-                    </th>
-                </tr>
+            <tr>
+                <th colspan="2">
+                    Your Ability Modifiers
+                </th>
+            </tr>
 
-                <tr>
-                    <th>Strength</th>
-                    <td>
-                        <input id="strength" name="screen" value="0">
-                        <button type="button" onclick="add('strength')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Strength</th>
+                <td>
+                    <input id="strength" name="screen" value="0">
+                    <button type="button" onclick="add('strength')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Dexterity</th>
-                    <td>
-                        <input id="dexterity" name="screen" value="0">
-                        <button type="button" onclick="add('dexterity')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Dexterity</th>
+                <td>
+                    <input id="dexterity" name="screen" value="0">
+                    <button type="button" onclick="add('dexterity')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Constitution</th>
-                    <td>
-                        <input id="constitution" name="screen" value="0">
-                        <button type="button" onclick="add('constitution')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Constitution</th>
+                <td>
+                    <input id="constitution" name="screen" value="0">
+                    <button type="button" onclick="add('constitution')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Intelligence</th>
-                    <td>
-                        <input id="intelligence" name="screen" value="0">
-                        <button type="button" onclick="add('intelligence')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Intelligence</th>
+                <td>
+                    <input id="intelligence" name="screen" value="0">
+                    <button type="button" onclick="add('intelligence')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Wisdom</th>
-                    <td>
-                        <input id="wisdom" name="screen" value="0">
-                        <button type="button" onclick="add('wisdom')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Wisdom</th>
+                <td>
+                    <input id="wisdom" name="screen" value="0">
+                    <button type="button" onclick="add('wisdom')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Charisma</th>
-                    <td>
-                        <input id="charisma" name="screen" value="0">
-                        <button type="button" onclick="add('charisma')">+</button>
-                    </td>
-                </tr>
+            <tr>
+                <th>Charisma</th>
+                <td>
+                    <input id="charisma" name="screen" value="0">
+                    <button type="button" onclick="add('charisma')">+</button>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Remaining</th>
-                    <td>
-                        <input id="remaining" name="screen" value="0" class="noButton">
-                    </td>
-                </tr>
+            <tr>
+                <th>Remaining</th>
+                <td>
+                    <input id="remaining" name="screen" value="0" class="noButton">
+                </td>
+            </tr>
 
-                <tr>
-                    <td colspan="2"><button type="button" onclick="resetRace()">Reset</button></td>
-                </tr>
-            </table>
+            <tr>
+                <td colspan="2"><button type="button" onclick="resetRace()">Reset</button></td>
+            </tr>
+        </table>
 
-            <!--<div><button type="button">Submit</button></div>-->
+        <h2 align="center">Step 2: Choose a Class</h2>
+        <div align="center"><select id="classselect" onchange="generateEquipment()">
+            <option value="none">Please Select a Class</option>
+            <option value="barbarian">Barbarian</option>
+            <option value="bard">Bard</option>
+            <option value="cleric">Cleric</option>
+            <option value="druid">Druid</option>
+            <option value="fighter">Fighter</option>
+            <option value="monk">Monk</option>
+            <option value="paladin">Paladin</option>
+            <option value="ranger">Ranger</option>
+            <option value="rogue">Rogue</option>
+            <option value="sorcerer">Sorcerer</option>
+            <option value="warlock">Warlock</option>
+            <option value="wizard">Wizard</option>
+        </select></div>
 
-            <table style="float: right; padding-bottom: 3%">
-                <tr>
-                    <td colspan="2">
-                        <select id="classselect">
-                            <option value="none">Please Select a Class</option>
-                            <option value="barbarian">Barbarian</option>
-                            <option value="bard">Bard</option>
-                            <option value="cleric">Cleric</option>
-                            <option value="druid">Druid</option>
-                            <option value="fighter">Fighter</option>
-                            <option value="monk">Monk</option>
-                            <option value="paladin">Paladin</option>
-                            <option value="ranger">Ranger</option>
-                            <option value="rogue">Rogue</option>
-                            <option value="sorcerer">Sorcerer</option>
-                            <option value="warlock">Warlock</option>
-                            <option value="wizard">Wizard</option>
-                        </select>
-                    </td>
-                </tr>
+        <h2 align="center">Step 3: Determine Ability Scores</h2>
+        <table align="center">
+            <tr>
+                <th colspan="2">
+                    Assign your Ability Scores
+                </th>
+            </tr>
 
-                <tr>
-                    <th colspan="2">
-                        Assign your Ability Scores
-                    </th>
-                </tr>
+            <tr>
+                <th>Strength</th>
+                <td>
+                    <select id="strengthselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Strength</th>
-                    <td>
-                        <select id="strengthselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <th>Dexterity</th>
+                <td>
+                    <select id="dexterityselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Dexterity</th>
-                    <td>
-                        <select id="dexterityselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <th>Constitution</th>
+                <td>
+                    <select id="constitutionselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Constitution</th>
-                    <td>
-                        <select id="constitutionselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <th>Intelligence</th>
+                <td>
+                    <select id="intelligenceselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Intelligence</th>
-                    <td>
-                        <select id="intelligenceselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <th>Wisdom</th>
+                <td>
+                    <select id="wisdomselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Wisdom</th>
-                    <td>
-                        <select id="wisdomselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <th>Charisma</th>
+                <td>
+                    <select id="charismaselect" class="abilityselect">
+                        <option value="def">Please Select an ability score</option>
+                        <option value="15">15</option>
+                        <option value="14">14</option>
+                        <option value="13">13</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                    </select>
+                </td>
+            </tr>
 
-                <tr>
-                    <th>Charisma</th>
-                    <td>
-                        <select id="charismaselect" class="abilityselect">
-                            <option value="def">Please Select an ability score</option>
-                            <option value="15">15</option>
-                            <option value="14">14</option>
-                            <option value="13">13</option>
-                            <option value="12">12</option>
-                            <option value="10">10</option>
-                            <option value="8">8</option>
-                        </select>
-                    </td>
-                </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="resetAbility()">Reset</button></td>
+            </tr>
+        </table>
 
-                <tr>
-                    <td colspan="2"><button type="button" onclick="resetAbility()">Reset</button></td>
-                </tr>
-            </table>
-            <button type="button" style="margin-left: 3%" onclick="generate()">Generate!</button>
+        <h2 align="center">Step 4: Choose Your Equipment</h2>
+        <div align="center">
+            <select id="equipmentA"></select>
+            <select id="equipmentB"></select>
+            <select id="equipmentC"></select>
         </div>
 
-        <div align="center" style="padding-top: 3%">
-            <table>
-                <tr>
-                    <td id="charstrength">
-                    </td>
-                    <td id="inspirationandproficiency">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="chardexterity">
-                    </td>
-                    <td id="savingthrows" rowspan="2">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charconstitution">
-                    </td>
-                    <td id="skills" rowspan="3">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charintelligence">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charwisdom">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charcharisma">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="passivewisdom" colspan="2">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="otherproficienciesandlanguages">
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <div align="center" style="padding-top: 3%"><button type="button" onclick="generate()">Generate!</button></div>
+
+
+
+        <table>
+            <tr>
+                <td id="charstrength">
+                </td>
+                <td id="inspirationandproficiency">
+                </td>
+                <td id="acinitspeed" colspan="3">
+                </td>
+            </tr>
+            <tr>
+                <td id="chardexterity">
+                </td>
+                <td id="savingthrows" rowspan="2">
+                </td>
+                <td id="hp">
+                </td>
+            </tr>
+            <tr>
+                <td id="charconstitution">
+                </td>
+            </tr>
+            <tr>
+                <td id="charintelligence">
+                </td>
+                <td id="skills" rowspan="3">
+                </td>
+                <td id="thp">
+                </td>
+            </tr>
+            <tr>
+                <td id="charwisdom">
+                </td>
+                <td id="hd">
+                </td>
+                <td id="attandspellcasting" colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td id="charcharisma">
+                </td>
+            </tr>
+            <tr>
+                <td id="passivewisdom" colspan="2">
+                </td>
+                <td id="equipment" colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td id="otherproficienciesandlanguages">
+                    <p id='languages'></p>
+                    <p id='armor'></p>
+                </td>
+            </tr>
+        </table>
+
 
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script language="javascript">
@@ -328,6 +346,94 @@
                 document.getElementById('charwisdom').innerHTML = "Wisdom: " + wisdom + " (+" + abilityModifier(wisdom) + ")";
                 var charisma = (parseInt(document.getElementById('charisma').value) + parseInt(document.getElementById('charismaselect').value));
                 document.getElementById('charcharisma').innerHTML = "Charisma: " + charisma + " (+" + abilityModifier(charisma) + ")";
+
+                document.getElementById('inspirationandproficiency').innerHTML = 'Proficiency: +2';
+                document.getElementById('languages').innerHTML = 'Languages: Common';
+                raceSpecific();
+            }
+
+            /*function classSpecific() {
+                var class = document.getElementById('classselect').value;
+
+            } */
+
+            function raceSpecific() {
+                var race = document.getElementById('raceselect').value;
+
+                if (race == 'mountaindwarf' || race == 'hilldwarf') {
+                    document.getElementById('languages').innerHTML += ', Dwarvish';
+                    if (race == 'mountaindwarf') {
+                        document.getElementById('armor').innerHTML += 'Armor: Light and Medium';
+                    }else {
+                        document.getElementById('hp').innerHTML = '1';
+                    }
+
+                }else if (race == 'darkelf' || race == 'highelf' || race == 'woodelf') {
+                    if (race == 'darkelf') {
+
+                    }else if (race == 'highelf') {
+
+                    }else {
+
+                    }
+
+                }else if (race == 'lightfoot' || race == 'stout') {
+                    if (race == 'lightfoot') {
+
+                    }else {
+
+                    }
+
+                }else if (race == 'forestgnome' || race == 'rockgnome') {
+                    if (race == 'forestgnome') {
+
+                    }else {
+
+                    }
+
+                }else if (race == 'dragonborn') {
+
+                }else if (race == 'halfelf') {
+
+                }else if (race == 'halforc') {
+
+                }else if (race == 'human') {
+
+                }else if (race == 'tiefling') {
+
+                }
+
+            /*    switch (race) {
+                    case 'mountaindwarf':
+                        alert("1");
+                        break;
+                    case 'hilldwarf':
+                        break;
+                    case 'darkelf':
+                        break;
+                    case 'highelf':
+                        break;
+                    case 'woodelf':
+                        break;
+                    case 'lightfoot':
+                        break;
+                    case 'stout':
+                        break;
+                    case 'forestgnome':
+                        break;
+                    case 'rockgnome':
+                        break;
+                    case 'dragonborn':
+                        break;
+                    case 'halfelf':
+                        break;
+                    case 'halforc':
+                        break;
+                    case 'human':
+                        break;
+                    case 'tiefling':
+                        break;
+                } */
             }
 
             function abilityModifier(stat) {
@@ -412,7 +518,74 @@
                 });
             }
 
+            function generateEquipment() {
+                var Class = document.getElementById("classselect").value;
+
+                if (Class =="barbarian") {
+                    barbarian();
+                }else if ( Class == "bard") {
+                    bard();
+                }else if ( Class == "cleric") {
+
+                }else if ( Class == "druid") {
+
+                }else if ( Class == "fighter") {
+
+                }else if ( Class == "monk") {
+
+                }else if ( Class == "paladin") {
+
+                }else if ( Class == "ranger") {
+
+                }else if ( Class == "rogue") {
+
+                }else if ( Class == "sorcerer") {
+
+                }else if ( Class == "warlock") {
+
+                }else if ( Class == "wizard") {
+
+                }
+
+            }
+
             /* Class and Ability selection functions */
+            function barbarian() {
+                document.getElementById('equipmentA').innerHTML = meleeMartialWeapon();
+                document.getElementById('equipmentB').innerHTML = '<option value="1">2x Handaxe (2d6 Slashing, 4lb, light, thrown (20/60))</option>';
+                document.getElementById('equipmentB').innerHTML += meleeWeapons();
+                document.getElementById('equipmentB').innerHTML += rangedWeapon();
+                document.getElementById('equipmentC').innerHTML = '<option value="1">Explorer\'s Pack: A backpack, a bedroll, a mess kit, a tinderbox, 10 torches, 10 days of rations, and a waterskin. 50 feet of hempen rope. Also, 4 Javelins (1d6 Piercing, 2lb, light, thrown (30/120)</option>';
+            }
+
+            function bard() {
+                document.getElementById('equipmentA').innerHTML = '<option value="8">Longsword (1d8 Slashing, 3lb, versatile (1d10))</option><option value="12">Rapier (1d8 Piercing, 2lb, Finesse)</option>';
+                document.getElementById('equipmentA').innerHTML += meleeWeapons();
+                document.getElementById('equipmentA').innerHTML += rangedWeapon();
+                document.getElementById('equipmentB').innerHTML = '<option value="1">Diplomat\s Pack: Includes a chest, 2 cases for maps and scrolls, a set of fine clolhes, a bottle of ink, an ink pen, a lamp, 2 flasks of oil, 5 sheets of paper, a vial of perfume, sealing wax, and soap.</option><option value="2">Entertainer\'s Pack: Includes a backpack, a bedroll, 2 costumes, 5 candles, 5 days of rations, a waterskin, and a disguise kit.</option>';
+                document.getElementById('equipmentC').innerHTML = musicalInstruments();
+            }
+
+            function musicalInstruments() {
+                return '<option value="1">Bagpipes, 6lb</option><option value="2">Drum, 3lb</option><option value="3">Dulcimer, 10lb</option><option value="4">Flute, 1lb</option><option value="5">Lute, 2lb</option><option value="6">Lyre, 2lb</option><option value="7">Horn, 2lb</option><option value="8">Pan Flute, 2lb</option><option value="9">Shawn, 1lb</option><option value="10">Viole, 1lb</option>';
+            }
+
+            function meleeWeapons() {
+                return '<option value="1">Club (1d4 Bludgeoning, 2lb, light)</option><option value="2">Dagger (1d4 Piercing, 1lb, Finesse, light, Thrown(20/60))</option><option value="3">Greatclub (1d8 Bludgeoning, 10lb, two-handed)</option><option value="4">Handaxe (1d6 Slashing, 2lb, light, thrown (20/60))</option><option value="5">Javelin (1d6 Piercing, 2lb, light, thrown (30/120))</option><option value="6">Lighthammer (1d4 Bludgeoning, 2lb, light, thrown (20/60))</option><option value="7">Club (1d6 Bludgeoning, 4lb)</option><option value="8">Quarterstaff (1d6 Bludgeoning, 4lb, versatile (1d8))</option><option value="9">Sickle (1d4 Slashing, 2lb, light)</option><option value="10">Spear (1d6 Piercing, 3lb, thrown (20/60), versatile (1d8))</option>';
+            }
+
+            function rangedWeapon() {
+                return '<option value="1">Crossbow - light (1d8 Piercing, 5lb, Ammunition (80/320), loading, two-handed)</option><option value="2">Dart (1d4 Piercing, 1/4lb, Finesse, thrown (20/60))</option><option value="3">Shortbow (1d6 Piercing, 2lb, Ammunition (80/320), two-handed)</option><option value="4">Sling (1d4 Bludgeoning, Ammunition (30/120))</option>';
+            }
+
+            function meleeMartialWeapon() {
+                return '<option value="1">Greataxe (1d12 Slashing, 7lb, Heavy, two-handed)</option><option value="2">Flail (1d8 Bludgeoning, 2lb)</option><option value="3">Glaive (1d10 Slashing, 6lb, Heavy, Reach, two-handed)</option><option value="4">Battleaxe (1d8 Slashing, 4lb, versatile (1d10))</option><option value="5">Greatsword (2d6 Slashing, 6lb, Heavy, two-handed)</option><option value="6">Halberd (1d10 Slashing, 6lb, Heavy, Reach, two-handed)</option><option value="7">Lance (1d12 Piercing, 6lb, Reach, Special)</option><option value="8">Longsword (1d8 Slashing, 3lb, versatile (1d10))</option><option value="9">Maul (2d6 Bludgeoning, 10lb, Heavy, two-handed)</option><option value="10">Morningstar (1d8 Piercing, 4lb)</option><option value="11">Pike (1d10 Piercing, 18lb, Heavy, Reach, two-handed)</option><option value="12">Rapier (1d8 Piercing, 2lb, Finesse)</option><option value="13">Scimitar (1d6 Slashing, 3lb, Finesse, light)</option><option value="14">Shortsword (1d6 Piercing, 2lb, Finesse, light)</option><option value="15">Trident (1d6 Piercing, 4lb, thrown (20/60), versatile (1d8))</option><option value="16">Warpick (1d8 Piercing, 2lb)</option><option value="17">Warhammer (1d8 Bludgeoning, 2lb, versatile (1d10))</option><option value="18">Whip (1d4 Slashing, 3lb, Finesse, Reach)</option>';
+            }
+
+            function rangedMartialWeapon() {
+                return '<option value="1">Blowgun (1 Piercing, 1lb, Ammunition (25/100), loading)</option><option value="2">Crossbow - hand (1d6 Piercing, 3lb, Ammunition (30/120), light, loading)</option><option value="3">Crossbow - heavy (1d10 Piercing, 18lb, Ammunition (100/400), heavy, loading, two-handed)</option><option value="4">Longbow (1d8 Piercing, 2lb, Ammunition (150/600), heavy, two-handed)</option><option value="5">Net (3lb, Special, thrown (5/15))</option>';
+            }
+
             $(document).ready(function() {
                 $(".abilityselect").change(function() {
                     // Get the selected value
