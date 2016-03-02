@@ -19,6 +19,10 @@
                 margin-bottom: 1.5%;
             }
 
+            body {
+              background-color: #f5f5dc;
+            }
+
             .noButton {
                 width: 100%;
             }
@@ -66,10 +70,8 @@
 
         <div class="row">
                 <div class="col-md-6">
-                <table>
-                    <tr>
-                        <td colspan="2">
-                            <select id="raceselect" onchange="populateTableRace()">
+                <div class="col-md-12" align="center">
+                    <select id="raceselect" onchange="populateTableRace()">
                                 <option value="norace">Please Select a Race</option>
                                 <option value="hilldwarf">Hill Dwarf</option>
                                 <option value="mountaindwarf">Mountain Dwarf</option>
@@ -85,83 +87,70 @@
                                 <option value="halfelf">Half-Elf</option>
                                 <option value="halforc">Half-Orc</option>
                                 <option value="tiefling">Tiefling</option>
-                            </select>
-                        </td>
-                    </tr>
+                      </select>
+                    </div>
 
-                    <tr>
-                        <th colspan="2">
-                            Your Ability Modifiers
-                        </th>
-                    </tr>
+                    <div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%">
+                            <h4>Your Ability Modifiers</h4>
+                    </div>
 
-                    <tr>
-                        <th>Strength</th>
-                        <td>
-                            <input id="strength" name="screen" value="0">
-                            <button type="button" onclick="add('strength')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Strength</div>
+                    <div class="col-md-5">
+                      <input id="strength" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('strength')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Dexterity</th>
-                        <td>
-                            <input id="dexterity" name="screen" value="0">
-                            <button type="button" onclick="add('dexterity')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Dexterity</div>
+                    <div class="col-md-5">
+                      <input id="dexterity" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('dexterity')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Constitution</th>
-                        <td>
-                            <input id="constitution" name="screen" value="0">
-                            <button type="button" onclick="add('constitution')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Constitution</div>
+                    <div class="col-md-5">
+                      <input id="constitution" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('constitution')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Intelligence</th>
-                        <td>
-                            <input id="intelligence" name="screen" value="0">
-                            <button type="button" onclick="add('intelligence')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Intelligence</div>
+                    <div class="col-md-5">
+                      <input id="intelligence" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('intelligence')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Wisdom</th>
-                        <td>
-                            <input id="wisdom" name="screen" value="0">
-                            <button type="button" onclick="add('wisdom')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Wisdom</div>
+                    <div class="col-md-5">
+                      <input id="wisdom" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('wisdom')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Charisma</th>
-                        <td>
-                            <input id="charisma" name="screen" value="0">
-                            <button type="button" onclick="add('charisma')">+</button>
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Charisma</div>
+                    <div class="col-md-5">
+                      <input id="charisma" name="screen" value="0" style="width: 100%">
+                    </div>
+                    <div class="col-md-1">
+                      <button type="button" onclick="add('charisma')">+</button>
+                    </div>
 
-                    <tr>
-                        <th>Remaining</th>
-                        <td>
-                            <input id="remaining" name="screen" value="0" class="noButton">
-                        </td>
-                    </tr>
+                    <div class="col-md-6">Remaining</div>
+                    <div class="col-md-6"><input id="remaining" name="screen" value="0" class="noButton"></div>
 
-                    <tr>
-                        <td colspan="2"><button type="button" onclick="resetRace()">Reset</button></td>
-                    </tr>
-                </table>
+                    <div class="col-md-12" align="center" style="padding-top: 4%"><button type="button" onclick="resetRace()">Reset</button></div>
             </div>
 
                 <!--<div><button type="button">Submit</button></div>-->
                 <div class="col-md-6">
-                <table style="float: right; padding-bottom: 3%">
-                    <tr>
-                        <td colspan="2">
-                            <select id="classselect">
+                <div class="col-md-12" align="center"><select id="classselect">
                                 <option value="none">Please Select a Class</option>
                                 <option value="barbarian">Barbarian</option>
                                 <option value="bard">Bard</option>
@@ -176,109 +165,95 @@
                                 <option value="warlock">Warlock</option>
                                 <option value="wizard">Wizard</option>
                             </select>
-                        </td>
-                    </tr>
+                </div>
 
-                    <tr>
-                        <th colspan="2">
-                            Assign your Ability Scores
-                        </th>
-                    </tr>
+                <div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%"><h4>Assign your Ability Scores</h4></div>
 
-                    <tr>
-                        <th>Strength</th>
-                        <td>
-                            <select id="strengthselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Strength</div>
+                  <div class="col-md-6"><select id="strengthselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <th>Dexterity</th>
-                        <td>
-                            <select id="dexterityselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Dexterity</div>
+                  <div class="col-md-6"><select id="dexterityselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <th>Constitution</th>
-                        <td>
-                            <select id="constitutionselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Constitution</div>
+                  <div class="col-md-6"><select id="constitutionselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <th>Intelligence</th>
-                        <td>
-                            <select id="intelligenceselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Intelligence</div>
+                  <div class="col-md-6"><select id="intelligenceselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <th>Wisdom</th>
-                        <td>
-                            <select id="wisdomselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Wisdom</div>
+                  <div class="col-md-6"><select id="wisdomselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <th>Charisma</th>
-                        <td>
-                            <select id="charismaselect" class="abilityselect">
-                                <option value="def">Please Select an ability score</option>
-                                <option value="15">15</option>
-                                <option value="14">14</option>
-                                <option value="13">13</option>
-                                <option value="12">12</option>
-                                <option value="10">10</option>
-                                <option value="8">8</option>
-                            </select>
-                        </td>
-                    </tr>
+                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
+                  <div class="col-md-6">Charisma</div>
+                  <div class="col-md-6"><select id="charismaselect" class="abilityselect">
+                                  <option value="def">Please Select an ability score</option>
+                                  <option value="15">15</option>
+                                  <option value="14">14</option>
+                                  <option value="13">13</option>
+                                  <option value="12">12</option>
+                                  <option value="10">10</option>
+                                  <option value="8">8</option>
+                              </select>
+                  </div>
+                </div>
 
-                    <tr>
-                        <td colspan="2"><button type="button" onclick="resetAbility()">Reset</button></td>
-                    </tr>
-                </table>
+                <div class="col-md-12" align="center" style="padding-top: 2%"><button type="button" onclick="resetAbility()">Reset</button></div>
             </div>
 
         </div>
