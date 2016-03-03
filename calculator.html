@@ -1,441 +1,445 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Ability Calculator</title>
+<head>
+  <meta charset="UTF-8">
+  <title>Ability Calculator</title>
 
-        <style>
-            td {
-                width: 50%;
-                max-width: 50%;
-                padding-top: 3%;
-                padding-bottom: 3%;
-                text-align: center;
-            }
+  <style>
+  td {
+    width: 50%;
+    max-width: 50%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    text-align: center;
+  }
 
-            select {
-                margin-left: 3%;
-                margin-top: 3%;
-                margin-bottom: 1.5%;
-            }
+  select {
+    margin-left: 3%;
+    margin-top: 3%;
+    margin-bottom: 1.5%;
+  }
 
-            body {
-              background-color: #f5f5dc;
-            }
+  body {
+    background-color: #f5f5dc;
+  }
 
-            .noButton {
-                width: 100%;
-            }
+  .noButton {
+    width: 100%;
+  }
 
-            .classInfo {
-                width: 25%;
-                height: 25%;
-            }
-        </style>
+  .classInfo {
+    width: 25%;
+    height: 25%;
+  }
+  </style>
 
-        <!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<!-- Optional theme -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
-        <script src="d3/d3.min.js" charset="utf-8"></script>
-    </head>
-    <body>
-        <div class="container">
-        <div class="row">
-            <div class="col-md-12"><h1 align="center" style="padding-bottom: 1.5%; font-family: Verdana;">Dungeons and Dragons Player Planner</h1></div>
+  <script src="d3/d3.min.js" charset="utf-8"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12"><h1 align="center" style="padding-bottom: 1.5%; font-family: Verdana"><b>DUNGEONS AND DRAGONS PLAYER PLANNER</b></h1></div>
 
-            <div class="col-md-12" align="center"><h4><b>What does each ability mean?</b></h4></div>
-            <div class="col-md-12" align="center"><b>Strength:</b>  Strength is a measure of natural athleticism and bodily power. This is useful Barbarians, Fighters and Paladins.<br /></div>
-            <div class="col-md-12" align="center"><b>Dexterity:</b> Dexterity is a measure of physical agility, reflexes, balance and poise. This is useful for Monks, Rangers and Rogues.<br /></div>
-            <div class="col-md-12" align="center"><b>Constitution:</b> Constitution is a measure of health, stamina and vital force. This is useful for <b><i>everyone!</i></b><br /></div>
-            <div class="col-md-12" align="center"><b>Intelligence:</b> Intelligence is a measure of mental acuity, information recall and analytical skill. This is useful for Wizards.<br /></div>
-            <div class="col-md-12" align="center"><b>Wisdom:</b> Wisdom is a measure of awareness, intuition and insight. This is useful for Clerics and Druids.<br /></div>
-            <div class="col-md-12" align="center"><b>Charisma:</b> Charisma is a measure of confidence, eloquence and leadership. This is useful for Bards, Sorcerers and Warlocks.<br /></div>
-            <div class="col-md-12" align="center"><b>Remaining:</b> This is how many points you have left to add to other abilities. Not all races have these points.</div>
+      <div class="col-md-12" align="center"><h4><b>What does each ability mean?</b></h4></div>
+      <div class="col-md-12" align="center"><b>Strength:</b>  Strength is a measure of natural athleticism and bodily power. This is useful Barbarians, Fighters and Paladins.<br /></div>
+      <div class="col-md-12" align="center"><b>Dexterity:</b> Dexterity is a measure of physical agility, reflexes, balance and poise. This is useful for Monks, Rangers and Rogues.<br /></div>
+      <div class="col-md-12" align="center"><b>Constitution:</b> Constitution is a measure of health, stamina and vital force. This is useful for <b><i>everyone!</i></b><br /></div>
+      <div class="col-md-12" align="center"><b>Intelligence:</b> Intelligence is a measure of mental acuity, information recall and analytical skill. This is useful for Wizards.<br /></div>
+      <div class="col-md-12" align="center"><b>Wisdom:</b> Wisdom is a measure of awareness, intuition and insight. This is useful for Clerics and Druids.<br /></div>
+      <div class="col-md-12" align="center"><b>Charisma:</b> Charisma is a measure of confidence, eloquence and leadership. This is useful for Bards, Sorcerers and Warlocks.<br /></div>
+      <div class="col-md-12" align="center"><b>Remaining:</b> This is how many points you have left to add to other abilities. Not all races have these points.</div>
 
-        </div>
-
-        <div class="row">
-            <div class="col-md-12" align="center" style="padding-bottom: 2%; padding-top: 2%"><img src="classes/classes.png" alt="class descriptions image" height="800" width="100%"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-12" align="center"><h2 align="center" style="font-family: Verdana;">Build Your Character!</h2></div>
-            <div class="col-md-12" align="center" style="padding-bottom: 4%"><button type="button" onclick="resetAll()">Reset All</button></div></div>
-
-        <div class="row">
-                <div class="col-md-6">
-                <div class="col-md-12" align="center">
-                    <select id="raceselect" onchange="populateTableRace()">
-                                <option value="norace">Please Select a Race</option>
-                                <option value="hilldwarf">Hill Dwarf</option>
-                                <option value="mountaindwarf">Mountain Dwarf</option>
-                                <option value="highelf">High-Elf</option>
-                                <option value="woodelf">Wood-Elf</option>
-                                <option value="darkelf">Dark-Elf/Drow</option>
-                                <option value="lightfoot">Lightfoot-Halfling</option>
-                                <option value="stout">Stout-Halfling</option>
-                                <option value="human">Human</option>
-                                <option value="dragonborn">Dragonborn</option>
-                                <option value="forestgnome">Forest-Gnome</option>
-                                <option value="rockgnome">Rock-Gnome</option>
-                                <option value="halfelf">Half-Elf</option>
-                                <option value="halforc">Half-Orc</option>
-                                <option value="tiefling">Tiefling</option>
-                      </select>
-                    </div>
-
-                    <div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%">
-                            <h4>Your Ability Modifiers</h4>
-                    </div>
-
-                    <div class="col-md-6">Strength</div>
-                    <div class="col-md-5">
-                      <input id="strength" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('strength')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Dexterity</div>
-                    <div class="col-md-5">
-                      <input id="dexterity" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('dexterity')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Constitution</div>
-                    <div class="col-md-5">
-                      <input id="constitution" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('constitution')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Intelligence</div>
-                    <div class="col-md-5">
-                      <input id="intelligence" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('intelligence')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Wisdom</div>
-                    <div class="col-md-5">
-                      <input id="wisdom" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('wisdom')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Charisma</div>
-                    <div class="col-md-5">
-                      <input id="charisma" name="screen" value="0" style="width: 100%">
-                    </div>
-                    <div class="col-md-1">
-                      <button type="button" onclick="add('charisma')">+</button>
-                    </div>
-
-                    <div class="col-md-6">Remaining</div>
-                    <div class="col-md-6"><input id="remaining" name="screen" value="0" class="noButton"></div>
-
-                    <div class="col-md-12" align="center" style="padding-top: 4%"><button type="button" onclick="resetRace()">Reset</button></div>
-            </div>
-
-                <!--<div><button type="button">Submit</button></div>-->
-                <div class="col-md-6">
-                <div class="col-md-12" align="center"><select id="classselect">
-                                <option value="none">Please Select a Class</option>
-                                <option value="barbarian">Barbarian</option>
-                                <option value="bard">Bard</option>
-                                <option value="cleric">Cleric</option>
-                                <option value="druid">Druid</option>
-                                <option value="fighter">Fighter</option>
-                                <option value="monk">Monk</option>
-                                <option value="paladin">Paladin</option>
-                                <option value="ranger">Ranger</option>
-                                <option value="rogue">Rogue</option>
-                                <option value="sorcerer">Sorcerer</option>
-                                <option value="warlock">Warlock</option>
-                                <option value="wizard">Wizard</option>
-                            </select>
-                </div>
-
-                <div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%"><h4>Assign your Ability Scores</h4></div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Strength</div>
-                  <div class="col-md-6"><select id="strengthselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Dexterity</div>
-                  <div class="col-md-6"><select id="dexterityselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Constitution</div>
-                  <div class="col-md-6"><select id="constitutionselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Intelligence</div>
-                  <div class="col-md-6"><select id="intelligenceselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Wisdom</div>
-                  <div class="col-md-6"><select id="wisdomselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" style="padding-top: 1%; padding-bottom: 1%">
-                  <div class="col-md-6">Charisma</div>
-                  <div class="col-md-6"><select id="charismaselect" class="abilityselect">
-                                  <option value="def">Please Select an ability score</option>
-                                  <option value="15">15</option>
-                                  <option value="14">14</option>
-                                  <option value="13">13</option>
-                                  <option value="12">12</option>
-                                  <option value="10">10</option>
-                                  <option value="8">8</option>
-                              </select>
-                  </div>
-                </div>
-
-                <div class="col-md-12" align="center" style="padding-top: 2%"><button type="button" onclick="resetAbility()">Reset</button></div>
-            </div>
-
-        </div>
-        <div class="row"><div class="col-md-12" align="center" style="padding-top: 2%"><button type="button" style="margin-left: 3%" onclick="generate()">Generate!</button></div></div>
-
-        <div align="center" style="padding-top: 3%; padding-bottom: 3%">
-            <table>
-                <tr>
-                    <td id="charstrength">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="chardexterity">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charconstitution">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charintelligence">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charwisdom">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="charcharisma">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="passivewisdom" colspan="2">
-                    </td>
-                </tr>
-            </table>
-        </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-md-12" align="center" style="padding-bottom: 2%; padding-top: 2%"><img src="classes/classes.png" alt="class descriptions image" height="800" width="100%"></div>
     </div>
 
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-        <script language="javascript">
-            /* Generate character sheet functions */
-            function generate() {
-                var strength = (parseInt(document.getElementById('strength').value) + parseInt(document.getElementById('strengthselect').value))
-                document.getElementById('charstrength').innerHTML = "Strength: " + strength + " (+" + abilityModifier(strength) + ")";
-                var dexterity = (parseInt(document.getElementById('dexterity').value) + parseInt(document.getElementById('dexterityselect').value));
-                document.getElementById('chardexterity').innerHTML = "Dexterity: " + dexterity + " (+" + abilityModifier(dexterity) + ")";
-                var constitution = (parseInt(document.getElementById('constitution').value) + parseInt(document.getElementById('constitutionselect').value));
-                document.getElementById('charconstitution').innerHTML = "Constitution: " + constitution + " (+" + abilityModifier(constitution) + ")";
-                var intelligence = (parseInt(document.getElementById('intelligence').value) + parseInt(document.getElementById('intelligenceselect').value));
-                document.getElementById('charintelligence').innerHTML = "Intelligence: " + intelligence + " (+" + abilityModifier(intelligence) + ")";
-                var wisdom = (parseInt(document.getElementById('wisdom').value) + parseInt(document.getElementById('wisdomselect').value));
-                document.getElementById('charwisdom').innerHTML = "Wisdom: " + wisdom + " (+" + abilityModifier(wisdom) + ")";
-                var charisma = (parseInt(document.getElementById('charisma').value) + parseInt(document.getElementById('charismaselect').value));
-                document.getElementById('charcharisma').innerHTML = "Charisma: " + charisma + " (+" + abilityModifier(charisma) + ")";
-            }
+    <div class="row">
+      <div class="col-md-12" align="center"><h2 align="center" style="font-family: Verdana;">Build Your Character!</h2></div>
+      <div class="col-md-12" align="center" style="padding-bottom: 4%"><button type="button" onclick="resetAll()">Reset All</button></div>
+    </div>
 
-            function abilityModifier(stat) {
-                var modifier;
-                if (stat == -1) {
-                    modifier = -5;
-                }else if (2 <= stat && stat <= 3) {
-                    modifier = -4;
-                }else if (4 <= stat && stat <= 5) {
-                    modifier = -3;
-                }else if (6 <= stat && stat <= 7) {
-                    modifier = -2;
-                }else if (8 <= stat && stat <= 9) {
-                    modifier = -1;
-                }else if (10 <= stat && stat <= 11) {
-                    modifier = 0;
-                }else if (12 <= stat && stat <= 13) {
-                    modifier = 1;
-                }else if (14 <= stat && stat <= 15) {
-                    modifier = 2;
-                }else if (16 <= stat && stat <= 17) {
-                    modifier = 3;
-                }else if (18 <= stat && stat <= 19) {
-                    modifier = 4;
-                }else if (20 <= stat && stat <= 21) {
-                    modifier = 5;
-                }else if (22 <= stat && stat <= 23) {
-                    modifier = 6;
-                }else if (24 <= stat && stat <= 25) {
-                    modifier = 7;
-                }else if (26 <= stat && stat <= 27) {
-                    modifier = 8;
-                }else if (28 <= stat && stat <= 29) {
-                    modifier = 9;
-                }else if (30 <= stat) {
-                    modifier = 10;
-                }
+    <div class="row">
+      <div class="col-md-6" style=" border-right: thick double #000000">
+        <div class="row">
+          <div class="col-md-12" align="center">
+            <select id="raceselect" onchange="populateTableRace()">
+              <option value="norace">Please Select a Race</option>
+              <option value="hilldwarf">Hill Dwarf</option>
+              <option value="mountaindwarf">Mountain Dwarf</option>
+              <option value="highelf">High-Elf</option>
+              <option value="woodelf">Wood-Elf</option>
+              <option value="darkelf">Dark-Elf/Drow</option>
+              <option value="lightfoot">Lightfoot-Halfling</option>
+              <option value="stout">Stout-Halfling</option>
+              <option value="human">Human</option>
+              <option value="dragonborn">Dragonborn</option>
+              <option value="forestgnome">Forest-Gnome</option>
+              <option value="rockgnome">Rock-Gnome</option>
+              <option value="halfelf">Half-Elf</option>
+              <option value="halforc">Half-Orc</option>
+              <option value="tiefling">Tiefling</option>
+            </select>
+          </div></div>
 
-                return modifier;
-            }
+          <div class="row"><div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%">
+            <h4>Your Ability Modifiers</h4>
+          </div></div>
 
-            /* Race selection functions */
-            function add(target) {
-                var prev = document.getElementById(target).value;
-                prev = parseInt(prev);
+          <div class="row"><div class="col-md-6">Strength</div>
+          <div class="col-md-5">
+            <input id="strength" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('strength')">+</button>
+          </div></div>
 
-                if (parseInt(document.getElementById('remaining').value) > 0) {
-                    document.getElementById(target).value = prev + 1;
-                    document.getElementById('remaining').value = parseInt(document.getElementById('remaining').value) - 1;
-                }
-            }
+          <div class="row"><div class="col-md-6">Dexterity</div>
+          <div class="col-md-5">
+            <input id="dexterity" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('dexterity')">+</button>
+          </div></div>
 
-            function minus(target) {
-                var prev = document.getElementById(target).value;
-                if (parseInt(prev) > 0)
-                    document.getElementById(target).value = parseInt(prev) - 1;
-            }
+          <div class="row"><div class="col-md-6">Constitution</div>
+          <div class="col-md-5">
+            <input id="constitution" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('constitution')">+</button>
+          </div></div>
 
-            function populateTableRace() {
-                var name = document.getElementById("raceselect").value;
-                var file = "races/" + name + ".csv";
-                var dataset = " ";
-                var array = [];
+          <div class="row"><div class="col-md-6">Intelligence</div>
+          <div class="col-md-5">
+            <input id="intelligence" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('intelligence')">+</button>
+          </div></div>
 
-                d3.csv(file, function(data) {
-                //  console.log(data[0]);
-                  dataset = JSON.stringify(data[0]);
-                  array = dataset.split(",");
+          <div class="row"><div class="col-md-6">Wisdom</div>
+          <div class="col-md-5">
+            <input id="wisdom" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('wisdom')">+</button>
+          </div></div>
 
-                  var i;
-                  for (i = 0; i<array.length; i++) {
-                      array[i] = array[i].split(":");
-                  }
+          <div class="row"><div class="col-md-6">Charisma</div>
+          <div class="col-md-5">
+            <input id="charisma" name="screen" value="0" style="width: 100%">
+          </div>
+          <div class="col-md-1" style="padding-left: 1%">
+            <button type="button" onclick="add('charisma')">+</button>
+          </div></div>
 
-                  document.getElementById('strength').value = parseInt(array[0][1][1]);
-                  document.getElementById('dexterity').value = parseInt(array[1][1][1]);
-                  document.getElementById('constitution').value = parseInt(array[2][1][1]);
-                  document.getElementById('intelligence').value = parseInt(array[3][1][1]);
-                  document.getElementById('wisdom').value = parseInt(array[4][1][1]);
-                  document.getElementById('charisma').value = parseInt(array[5][1][1]);
-                  document.getElementById('remaining').value = parseInt(array[6][1][1]);
-                });
-            }
+          <div class="row"><div class="col-md-6">Remaining</div>
+          <div class="col-md-6"><input id="remaining" name="screen" value="0" class="noButton" style="width: 99%"></div></div>
 
-            /* Class and Ability selection functions */
-            $(document).ready(function() {
-                $(".abilityselect").change(function() {
-                    // Get the selected value
-                    var selected = $("option:selected", $(this)).val();
-                    // Get the ID of this element
-                    var thisID = $(this).attr("id");
-                    // Reset so all values are showing:
-                    $(".abilityselect option").each(function() {
-                        $(this).show();
-                    });
-                    $(".abilityselect").each(function() {
-                        if ($(this).attr("id") != thisID) {
-                            $("option[value='" + selected + "']", $(this)).attr("disabled", true);
-                        }
-                    });
+          <div class="row"><div class="col-md-12" align="center" style="padding-top: 4%"><button type="button" onclick="resetRace()">Reset</button></div></div>
+        </div>
 
-                });
-            });
+        <!--<div><button type="button">Submit</button></div>-->
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12" align="center"><select id="classselect">
+              <option value="none">Please Select a Class</option>
+              <option value="barbarian">Barbarian</option>
+              <option value="bard">Bard</option>
+              <option value="cleric">Cleric</option>
+              <option value="druid">Druid</option>
+              <option value="fighter">Fighter</option>
+              <option value="monk">Monk</option>
+              <option value="paladin">Paladin</option>
+              <option value="ranger">Ranger</option>
+              <option value="rogue">Rogue</option>
+              <option value="sorcerer">Sorcerer</option>
+              <option value="warlock">Warlock</option>
+              <option value="wizard">Wizard</option>
+            </select>
+          </div>
+        </div>
 
-            /* Reset functions */
-            function resetAll() {
-                resetAbility();
-                $("#raceselect").each(function() { this.selectedIndex = 0 });
-                resetRace();
-                $("#classselect").each(function() { this.selectedIndex = 0 });
-            }
+        <div class="row"><div class="col-md-12" align="center" style="padding-top: 1%; padding-bottom:1%">
+          <h4>Assign your Ability Scores</h4>
+        </div></div>
 
-            function resetRace() {
-                populateTableRace();
-            }
+        <div class="row" style="padding-top: 1%; padding-bottom: 1%">
+          <div class="col-md-6">Strength</div>
+          <div class="col-md-6"><select id="strengthselect" class="abilityselect">
+            <option value="def">Please Select an ability score</option>
+            <option value="15">15</option>
+            <option value="14">14</option>
+            <option value="13">13</option>
+            <option value="12">12</option>
+            <option value="10">10</option>
+            <option value="8">8</option>
+          </select>
+        </div>
+      </div>
 
-            function resetAbility() {
-                $(".abilityselect").each(function() { this.selectedIndex = 0 });
-                $(".abilityselect").each(function() {
-                        $("option[value='" + 15 + "']", $(this)).attr("disabled", false);
-                        $("option[value='" + 14 + "']", $(this)).attr("disabled", false);
-                        $("option[value='" + 13 + "']", $(this)).attr("disabled", false);
-                        $("option[value='" + 12 + "']", $(this)).attr("disabled", false);
-                        $("option[value='" + 10 + "']", $(this)).attr("disabled", false);
-                        $("option[value='" + 8 + "']", $(this)).attr("disabled", false);
-                });
-            }
-        </script>
-    </body>
+      <div class="row" style="padding-top: 1%; padding-bottom: 1%">
+        <div class="col-md-6">Dexterity</div>
+        <div class="col-md-6"><select id="dexterityselect" class="abilityselect">
+          <option value="def">Please Select an ability score</option>
+          <option value="15">15</option>
+          <option value="14">14</option>
+          <option value="13">13</option>
+          <option value="12">12</option>
+          <option value="10">10</option>
+          <option value="8">8</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row" style="padding-top: 1%; padding-bottom: 1%">
+      <div class="col-md-6">Constitution</div>
+      <div class="col-md-6"><select id="constitutionselect" class="abilityselect">
+        <option value="def">Please Select an ability score</option>
+        <option value="15">15</option>
+        <option value="14">14</option>
+        <option value="13">13</option>
+        <option value="12">12</option>
+        <option value="10">10</option>
+        <option value="8">8</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row" style="padding-top: 1%; padding-bottom: 1%">
+    <div class="col-md-6">Intelligence</div>
+    <div class="col-md-6"><select id="intelligenceselect" class="abilityselect">
+      <option value="def">Please Select an ability score</option>
+      <option value="15">15</option>
+      <option value="14">14</option>
+      <option value="13">13</option>
+      <option value="12">12</option>
+      <option value="10">10</option>
+      <option value="8">8</option>
+    </select>
+  </div>
+</div>
+
+<div class="row" style="padding-top: 1%; padding-bottom: 1%">
+  <div class="col-md-6">Wisdom</div>
+  <div class="col-md-6"><select id="wisdomselect" class="abilityselect">
+    <option value="def">Please Select an ability score</option>
+    <option value="15">15</option>
+    <option value="14">14</option>
+    <option value="13">13</option>
+    <option value="12">12</option>
+    <option value="10">10</option>
+    <option value="8">8</option>
+  </select>
+</div>
+</div>
+
+<div class="row" style="padding-top: 1%; padding-bottom: 1%">
+  <div class="col-md-6">Charisma</div>
+  <div class="col-md-6"><select id="charismaselect" class="abilityselect">
+    <option value="def">Please Select an ability score</option>
+    <option value="15">15</option>
+    <option value="14">14</option>
+    <option value="13">13</option>
+    <option value="12">12</option>
+    <option value="10">10</option>
+    <option value="8">8</option>
+  </select>
+</div>
+</div>
+
+<div class="row"><div class="col-md-12" align="center" style="padding-top: 2%"><button type="button" onclick="resetAbility()">Reset</button></div></div>
+</div>
+<div class="row"><div class="col-md-12" align="center" style="padding-top: 2%; padding-right: 4%"><button type="button" style="margin-left: 3%" onclick="generate()">Generate!</button></div></div>
+
+<div align="center" style="padding-top: 3%; padding-bottom: 3%">
+  <table>
+    <tr>
+      <td id="charstrength">
+      </td>
+    </tr>
+    <tr>
+      <td id="chardexterity">
+      </td>
+    </tr>
+    <tr>
+      <td id="charconstitution">
+      </td>
+    </tr>
+    <tr>
+      <td id="charintelligence">
+      </td>
+    </tr>
+    <tr>
+      <td id="charwisdom">
+      </td>
+    </tr>
+    <tr>
+      <td id="charcharisma">
+      </td>
+    </tr>
+    <tr>
+      <td id="passivewisdom" colspan="2">
+      </td>
+    </tr>
+  </table>
+</div>
+</div>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script language="javascript">
+/* Generate character sheet functions */
+function generate() {
+  var strength = (parseInt(document.getElementById('strength').value) + parseInt(document.getElementById('strengthselect').value))
+  document.getElementById('charstrength').innerHTML = "Strength: " + strength + " (+" + abilityModifier(strength) + ")";
+  var dexterity = (parseInt(document.getElementById('dexterity').value) + parseInt(document.getElementById('dexterityselect').value));
+  document.getElementById('chardexterity').innerHTML = "Dexterity: " + dexterity + " (+" + abilityModifier(dexterity) + ")";
+  var constitution = (parseInt(document.getElementById('constitution').value) + parseInt(document.getElementById('constitutionselect').value));
+  document.getElementById('charconstitution').innerHTML = "Constitution: " + constitution + " (+" + abilityModifier(constitution) + ")";
+  var intelligence = (parseInt(document.getElementById('intelligence').value) + parseInt(document.getElementById('intelligenceselect').value));
+  document.getElementById('charintelligence').innerHTML = "Intelligence: " + intelligence + " (+" + abilityModifier(intelligence) + ")";
+  var wisdom = (parseInt(document.getElementById('wisdom').value) + parseInt(document.getElementById('wisdomselect').value));
+  document.getElementById('charwisdom').innerHTML = "Wisdom: " + wisdom + " (+" + abilityModifier(wisdom) + ")";
+  var charisma = (parseInt(document.getElementById('charisma').value) + parseInt(document.getElementById('charismaselect').value));
+  document.getElementById('charcharisma').innerHTML = "Charisma: " + charisma + " (+" + abilityModifier(charisma) + ")";
+}
+
+function abilityModifier(stat) {
+  var modifier;
+  if (stat == -1) {
+    modifier = -5;
+  }else if (2 <= stat && stat <= 3) {
+    modifier = -4;
+  }else if (4 <= stat && stat <= 5) {
+    modifier = -3;
+  }else if (6 <= stat && stat <= 7) {
+    modifier = -2;
+  }else if (8 <= stat && stat <= 9) {
+    modifier = -1;
+  }else if (10 <= stat && stat <= 11) {
+    modifier = 0;
+  }else if (12 <= stat && stat <= 13) {
+    modifier = 1;
+  }else if (14 <= stat && stat <= 15) {
+    modifier = 2;
+  }else if (16 <= stat && stat <= 17) {
+    modifier = 3;
+  }else if (18 <= stat && stat <= 19) {
+    modifier = 4;
+  }else if (20 <= stat && stat <= 21) {
+    modifier = 5;
+  }else if (22 <= stat && stat <= 23) {
+    modifier = 6;
+  }else if (24 <= stat && stat <= 25) {
+    modifier = 7;
+  }else if (26 <= stat && stat <= 27) {
+    modifier = 8;
+  }else if (28 <= stat && stat <= 29) {
+    modifier = 9;
+  }else if (30 <= stat) {
+    modifier = 10;
+  }
+
+  return modifier;
+}
+
+/* Race selection functions */
+function add(target) {
+  var prev = document.getElementById(target).value;
+  prev = parseInt(prev);
+
+  if (parseInt(document.getElementById('remaining').value) > 0) {
+    document.getElementById(target).value = prev + 1;
+    document.getElementById('remaining').value = parseInt(document.getElementById('remaining').value) - 1;
+  }
+}
+
+function minus(target) {
+  var prev = document.getElementById(target).value;
+  if (parseInt(prev) > 0)
+  document.getElementById(target).value = parseInt(prev) - 1;
+}
+
+function populateTableRace() {
+  var name = document.getElementById("raceselect").value;
+  var file = "races/" + name + ".csv";
+  var dataset = " ";
+  var array = [];
+
+  d3.csv(file, function(data) {
+    //  console.log(data[0]);
+    dataset = JSON.stringify(data[0]);
+    array = dataset.split(",");
+
+    var i;
+    for (i = 0; i<array.length; i++) {
+      array[i] = array[i].split(":");
+    }
+
+    document.getElementById('strength').value = parseInt(array[0][1][1]);
+    document.getElementById('dexterity').value = parseInt(array[1][1][1]);
+    document.getElementById('constitution').value = parseInt(array[2][1][1]);
+    document.getElementById('intelligence').value = parseInt(array[3][1][1]);
+    document.getElementById('wisdom').value = parseInt(array[4][1][1]);
+    document.getElementById('charisma').value = parseInt(array[5][1][1]);
+    document.getElementById('remaining').value = parseInt(array[6][1][1]);
+  });
+}
+
+/* Class and Ability selection functions */
+$(document).ready(function() {
+  $(".abilityselect").change(function() {
+    // Get the selected value
+    var selected = $("option:selected", $(this)).val();
+    // Get the ID of this element
+    var thisID = $(this).attr("id");
+    // Reset so all values are showing:
+    $(".abilityselect option").each(function() {
+      $(this).show();
+    });
+    $(".abilityselect").each(function() {
+      if ($(this).attr("id") != thisID) {
+        $("option[value='" + selected + "']", $(this)).attr("disabled", true);
+      }
+    });
+
+  });
+});
+
+/* Reset functions */
+function resetAll() {
+  resetAbility();
+  $("#raceselect").each(function() { this.selectedIndex = 0 });
+  resetRace();
+  $("#classselect").each(function() { this.selectedIndex = 0 });
+}
+
+function resetRace() {
+  populateTableRace();
+}
+
+function resetAbility() {
+  $(".abilityselect").each(function() { this.selectedIndex = 0 });
+  $(".abilityselect").each(function() {
+    $("option[value='" + 15 + "']", $(this)).attr("disabled", false);
+    $("option[value='" + 14 + "']", $(this)).attr("disabled", false);
+    $("option[value='" + 13 + "']", $(this)).attr("disabled", false);
+    $("option[value='" + 12 + "']", $(this)).attr("disabled", false);
+    $("option[value='" + 10 + "']", $(this)).attr("disabled", false);
+    $("option[value='" + 8 + "']", $(this)).attr("disabled", false);
+  });
+}
+</script>
+</body>
 </html>
