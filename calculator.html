@@ -259,58 +259,41 @@
 
 <div class="row"><div class="col-md-12" align="center" style="padding-top: 2%"><button type="button" onclick="resetAbility()">Reset</button></div></div>
 </div>
-<div class="row"><div class="col-md-12" align="center" style="padding-top: 2%; padding-right: 4%"><button type="button" style="margin-left: 3%" onclick="generate()">Generate!</button></div></div>
+<div class="row"><div class="col-md-12" align="center" style="padding-top: 2%; padding-right: 4%; padding-bottom:3%"><button type="button" style="margin-left: 3%" onclick="generate()">Generate!</button></div></div>
 
-<div align="center" style="padding-top: 3%; padding-bottom: 3%">
-  <table>
-    <tr>
-      <td id="charstrength">
-      </td>
-    </tr>
-    <tr>
-      <td id="chardexterity">
-      </td>
-    </tr>
-    <tr>
-      <td id="charconstitution">
-      </td>
-    </tr>
-    <tr>
-      <td id="charintelligence">
-      </td>
-    </tr>
-    <tr>
-      <td id="charwisdom">
-      </td>
-    </tr>
-    <tr>
-      <td id="charcharisma">
-      </td>
-    </tr>
-    <tr>
-      <td id="passivewisdom" colspan="2">
-      </td>
-    </tr>
-  </table>
-</div>
-</div>
+<div class="row"><div class="col-md-12" align="center" id="charstrength"></div></div>
+<div class="row"><div class="col-md-12" align="center" id="chardexterity"></div></div>
+<div class="row"><div class="col-md-12" align="center" id="charconstitution"></div></div>
+<div class="row"><div class="col-md-12" align="center" id="charintelligence"></div></div>
+<div class="row"><div class="col-md-12" align="center" id="charwisdom"></div></div>
+<div class="row"><div class="col-md-12" align="center" id="charcharisma"></div></div>
+<div class="row" style="padding-bottom:3%"><div class="col-md-12" align="center"  id="passivewisdom"></div></div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script language="javascript">
 /* Generate character sheet functions */
 function generate() {
   var strength = (parseInt(document.getElementById('strength').value) + parseInt(document.getElementById('strengthselect').value))
-  document.getElementById('charstrength').innerHTML = "Strength: " + strength + " (+" + abilityModifier(strength) + ")";
+  insertModifier(strength, "charstrength");
   var dexterity = (parseInt(document.getElementById('dexterity').value) + parseInt(document.getElementById('dexterityselect').value));
-  document.getElementById('chardexterity').innerHTML = "Dexterity: " + dexterity + " (+" + abilityModifier(dexterity) + ")";
+  insertModifier(dexterity, "chardexterity");
   var constitution = (parseInt(document.getElementById('constitution').value) + parseInt(document.getElementById('constitutionselect').value));
-  document.getElementById('charconstitution').innerHTML = "Constitution: " + constitution + " (+" + abilityModifier(constitution) + ")";
+  insertModifier(constitution, "charconstitution")
   var intelligence = (parseInt(document.getElementById('intelligence').value) + parseInt(document.getElementById('intelligenceselect').value));
-  document.getElementById('charintelligence').innerHTML = "Intelligence: " + intelligence + " (+" + abilityModifier(intelligence) + ")";
+  insertModifier(intelligence, "charintelligence");
   var wisdom = (parseInt(document.getElementById('wisdom').value) + parseInt(document.getElementById('wisdomselect').value));
-  document.getElementById('charwisdom').innerHTML = "Wisdom: " + wisdom + " (+" + abilityModifier(wisdom) + ")";
+  insertModifier(wisdom, "charwisdom");
   var charisma = (parseInt(document.getElementById('charisma').value) + parseInt(document.getElementById('charismaselect').value));
-  document.getElementById('charcharisma').innerHTML = "Charisma: " + charisma + " (+" + abilityModifier(charisma) + ")";
+  insertModifier(charisma, "charcharisma");
+}
+
+function insertModifier(skill, id) {
+    var modifier = abilityModifier(skill);
+    if (modifier > 0) {
+        document.getElementById(id).innerHTML = id[4].toUpperCase() + id.slice(5) + ": " + skill + " (+" + modifier + ")";
+    } else {
+        document.getElementById(id).innerHTML = id[4].toUpperCase() + id.slice(5) + ": " + skill + " (" + modifier + ")";
+    }
 }
 
 function abilityModifier(stat) {
