@@ -279,11 +279,11 @@
 <div ng-app="" style="padding-top:3%; padding-bottom:3%">
   <div class="row">
     <div class="col-md-4" id="name" style="border-style: none solid solid solid; height: 32px;">
-      <input type="text" ng-model="name" style="width: 100%">
+      <input type="text" placeholder="Character Name" ng-model="name" style="width: 100%">
     </div>
     <div class="col-md-4" id="race" style="border-style: none solid solid none; height: 32px;">
       <select id="raceselect" onchange="populateTableRace()" ng-model="race" style="width: 100%">
-        <option value="norace">Please Select a Race</option>
+        <option value="" disabled selected>Please Select a Race</option>
         <option value="hilldwarf">Hill Dwarf</option>
         <option value="mountaindwarf">Mountain Dwarf</option>
         <option value="highelf">High-Elf</option>
@@ -302,7 +302,7 @@
     </div>
     <div class="col-md-4" id="class" style="border-style: none solid solid none; height: 32px;">
       <select id="classselect" ng-model="class" style="width: 100%">
-        <option value="none">Please Select a Class</option>
+        <option value="" disabled selected>Please Select a Class</option>
         <option value="barbarian">Barbarian</option>
         <option value="bard">Bard</option>
         <option value="cleric">Cleric</option>
