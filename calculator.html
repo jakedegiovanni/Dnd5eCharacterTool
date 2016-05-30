@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
 <head>
   <meta charset="UTF-8">
   <title>Ability Calculator</title>
@@ -40,7 +41,7 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="bootstrap/js/bootstrap.min.js"></script>
 
-  <script src="d3/d3.min.js" charset="utf-8"></script>
+  <!--<script src="d3/d3.min.js" charset="utf-8"></script>-->
 </head>
 <body>
   <div class="container">
@@ -268,6 +269,56 @@
 <div class="row"><div class="col-md-12" align="center" id="charwisdom"></div></div>
 <div class="row"><div class="col-md-12" align="center" id="charcharisma"></div></div>
 <div class="row" style="padding-bottom:3%"><div class="col-md-12" align="center"  id="passivewisdom"></div></div>
+
+<!--
+================================================================================================================================
+                                                              Angular implementation starts here!!!!
+================================================================================================================================
+ -->
+
+<div ng-app="" style="padding-top:3%; padding-bottom:3%">
+  <div class="row">
+    <div class="col-md-4" id="name" style="border-style: none solid solid solid; height: 32px;">
+      <input type="text" ng-model="name" style="width: 100%">
+    </div>
+    <div class="col-md-4" id="race" style="border-style: none solid solid none; height: 32px;">
+      <select id="raceselect" onchange="populateTableRace()" ng-model="race" style="width: 100%">
+        <option value="norace">Please Select a Race</option>
+        <option value="hilldwarf">Hill Dwarf</option>
+        <option value="mountaindwarf">Mountain Dwarf</option>
+        <option value="highelf">High-Elf</option>
+        <option value="woodelf">Wood-Elf</option>
+        <option value="darkelf">Dark-Elf/Drow</option>
+        <option value="lightfoot">Lightfoot-Halfling</option>
+        <option value="stout">Stout-Halfling</option>
+        <option value="human">Human</option>
+        <option value="dragonborn">Dragonborn</option>
+        <option value="forestgnome">Forest-Gnome</option>
+        <option value="rockgnome">Rock-Gnome</option>
+        <option value="halfelf">Half-Elf</option>
+        <option value="halforc">Half-Orc</option>
+        <option value="tiefling">Tiefling</option>
+      </select>
+    </div>
+    <div class="col-md-4" id="class" style="border-style: none solid solid none; height: 32px;">
+      <select id="classselect" ng-model="class" style="width: 100%">
+        <option value="none">Please Select a Class</option>
+        <option value="barbarian">Barbarian</option>
+        <option value="bard">Bard</option>
+        <option value="cleric">Cleric</option>
+        <option value="druid">Druid</option>
+        <option value="fighter">Fighter</option>
+        <option value="monk">Monk</option>
+        <option value="paladin">Paladin</option>
+        <option value="ranger">Ranger</option>
+        <option value="rogue">Rogue</option>
+        <option value="sorcerer">Sorcerer</option>
+        <option value="warlock">Warlock</option>
+        <option value="wizard">Wizard</option>
+      </select>
+    </div>
+  </div>
+</div>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <script language="javascript">
