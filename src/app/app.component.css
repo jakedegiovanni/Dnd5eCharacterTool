@@ -3,3 +3,13 @@
     flex-direction: column;
     flex-wrap: wrap;
 }
+
+.app-title {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding-bottom: 1.5%;
+}
+
+.action-buttons {
+    margin: 25px;
+}
