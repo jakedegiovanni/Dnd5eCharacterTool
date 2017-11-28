@@ -1,0 +1,142 @@
+{
+    "darkelf": {
+        "displayName": "Dark Elf",
+        "strength": 0,
+        "dexterity": 2,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 1,
+        "remaining": 0
+    },
+    "dragonborn": {
+        "displayName": "Dargonborn",
+        "strength": 2,
+        "dexterity": 0,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 1,
+        "remaining": 0
+    },
+    "forestgnome": {
+        "displayName": "Forest Gnome",
+        "strength": 0,
+        "dexterity": 1,
+        "constitution": 0,
+        "intelligence": 2,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "halfelf": {
+        "displayName": "Half Elf",
+        "strength": 0,
+        "dexterity": 0,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 2,
+        "remaining": 2
+    },
+    "halforc": {
+        "displayName": "Half Orc",
+        "strength": 2,
+        "dexterity": 0,
+        "constitution": 1,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "highelf": {
+        "displayName": "High Elf",
+        "strength": 0,
+        "dexterity": 2,
+        "constitution": 0,
+        "intelligence": 1,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "hilldwarf": {
+        "displayName": "Hill Dwarf",
+        "strength": 0,
+        "dexterity": 0,
+        "constitution": 2,
+        "intelligence": 0,
+        "wisdom": 1,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "human": {
+        "displayName": "Human",
+        "strength": 1,
+        "dexterity": 1,
+        "constitution": 1,
+        "intelligence": 1,
+        "wisdom": 1,
+        "charisma": 1,
+        "remaining": 2
+    },
+    "lightfoot": {
+        "displayName": "Lightfoot",
+        "strength": 0,
+        "dexterity": 2,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 1,
+        "remaining": 0
+    },
+    "mountaindwarf": {
+        "displayName": "Mountain Dwarf",
+        "strength": 2,
+        "dexterity": 0,
+        "constitution": 2,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "rockgnome": {
+        "displayName": "Rock Gnome",
+        "strength": 0,
+        "dexterity": 1,
+        "constitution": 2,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "stout": {
+        "displayName": "Stout",
+        "strength": 0,
+        "dexterity": 2,
+        "constitution": 1,
+        "intelligence": 0,
+        "wisdom": 0,
+        "charisma": 0,
+        "remaining": 0
+    },
+    "tiefling": {
+        "displayName": "Tiefling",
+        "strength": 0,
+        "dexterity": 0,
+        "constitution": 0,
+        "intelligence": 1,
+        "wisdom": 0,
+        "charisma": 2,
+        "remaining": 0
+    },
+    "woodelf": {
+        "displayName": "Wood Elf",
+        "strength": 0,
+        "dexterity": 2,
+        "constitution": 0,
+        "intelligence": 0,
+        "wisdom": 1,
+        "charisma": 0,
+        "remaining": 0
+    }
+}
