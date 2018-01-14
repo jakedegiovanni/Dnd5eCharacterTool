@@ -1,0 +1,13 @@
+{
+    "shortbow": {
+        "cost_gp": 25,
+        "damage_dice": "1d6",
+        "damage_type": "piercing",
+        "weight_lb": 2,
+        "hand_type": "two",
+        "range": "80/320",
+        "properties": [
+            "ammunition"
+        ]
+    }
+}
